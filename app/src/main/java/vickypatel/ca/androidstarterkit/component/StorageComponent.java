@@ -1,9 +1,10 @@
 package vickypatel.ca.androidstarterkit.component;
 
+import android.content.SharedPreferences;
+
 import javax.inject.Singleton;
 
 import dagger.Component;
-import vickypatel.ca.androidstarterkit.MainActivity;
 import vickypatel.ca.androidstarterkit.modules.StorageModule;
 
 /**
@@ -12,5 +13,9 @@ import vickypatel.ca.androidstarterkit.modules.StorageModule;
 @Singleton
 @Component(modules = StorageModule.class)
 public interface StorageComponent {
-    void inject(MainActivity mainActivity);
+
+    /**
+     * downstream components need these exposed
+     */
+    SharedPreferences defaultSharedPreferences();
 }

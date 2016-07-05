@@ -1,9 +1,9 @@
 package vickypatel.ca.androidstarterkit.modules;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.Preference;
 import android.preference.PreferenceManager;
+
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -17,12 +17,13 @@ public class StorageModule {
 
     private final MyApplication application;
 
-    public StorageModule(MyApplication context){
-        application =  context;
+    public StorageModule(MyApplication context) {
+        application = context;
     }
 
+    @Singleton
     @Provides
-    SharedPreferences provideDefaultSharedPreferences(){
+    SharedPreferences provideDefaultSharedPreferences() {
         return PreferenceManager.getDefaultSharedPreferences(application);
     }
 }

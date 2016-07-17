@@ -16,22 +16,28 @@ import org.json.JSONArray;
 
 import javax.inject.Inject;
 
+import vickypatel.ca.androidstarterkit.adapters.DatabaseAdapter;
 import vickypatel.ca.androidstarterkit.extras.MyApplication;
+import vickypatel.ca.androidstarterkit.modules.DatabaseModule;
 
 public class MainActivity extends AppCompatActivity {
 
     public String TEST = "TEST";
+
     @Inject
     SharedPreferences defaultPreferences;
     @Inject
     RequestQueue requestQueue;
+    @Inject
+    DatabaseAdapter databaseAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MyApplication.getInstance().getNetworkComponent().inject(this);
+        MyApplication.getInstance().getAppComponent().inject(this);
 
         SharedPreferences.Editor editor = defaultPreferences.edit();
         editor.putBoolean(TEST, true);

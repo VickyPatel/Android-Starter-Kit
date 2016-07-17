@@ -5,11 +5,9 @@ import java.lang.annotation.RetentionPolicy;
 
 import javax.inject.Scope;
 
-
 /**
- * Created by VickyPatel on 2016-07-05.
+ * Created by VickyPatel on 2016-07-07.
  */
 @Scope
-@Retention(RetentionPolicy.RUNTIME)
-public @interface CustomScope {
+public @interface MyAppScope {
 }

@@ -5,6 +5,7 @@ import com.android.volley.RequestQueue;
 import dagger.Module;
 import dagger.Provides;
 import vickypatel.ca.androidstarterkit.extras.CustomScope;
+import vickypatel.ca.androidstarterkit.extras.MyAppScope;
 import vickypatel.ca.androidstarterkit.network.VolleySingleton;
 
 /**
@@ -13,10 +14,9 @@ import vickypatel.ca.androidstarterkit.network.VolleySingleton;
 @Module
 public class NetworkModule {
 
-
-    @CustomScope
+    @MyAppScope
     @Provides
-    RequestQueue provideRequestQueue() {
+    RequestQueue provideRequestQueue(){
         return VolleySingleton.getInstance().getRequestQueue();
     }
 }

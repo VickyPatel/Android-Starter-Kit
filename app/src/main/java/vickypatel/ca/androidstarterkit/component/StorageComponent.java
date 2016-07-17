@@ -18,4 +18,5 @@ public interface StorageComponent {
      * downstream components need these exposed
      */
     SharedPreferences defaultSharedPreferences();
+
 }

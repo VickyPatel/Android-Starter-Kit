@@ -7,6 +7,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import vickypatel.ca.androidstarterkit.extras.MyAppScope;
 import vickypatel.ca.androidstarterkit.extras.MyApplication;
 
 /**
@@ -17,13 +18,13 @@ public class StorageModule {
 
     private final MyApplication application;
 
-    public StorageModule(MyApplication context) {
-        application = context;
+    public StorageModule(MyApplication application){
+        this.application = application;
     }
 
     @Singleton
     @Provides
-    SharedPreferences provideDefaultSharedPreferences() {
+    SharedPreferences provideDefaultSharedPreferences(){
         return PreferenceManager.getDefaultSharedPreferences(application);
     }
 }

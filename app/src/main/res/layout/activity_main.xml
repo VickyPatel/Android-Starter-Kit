@@ -10,6 +10,7 @@
     tools:context="vickypatel.ca.androidstarterkit.MainActivity">
 
     <Button
+        android:id="@+id/testButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Test Dagger"

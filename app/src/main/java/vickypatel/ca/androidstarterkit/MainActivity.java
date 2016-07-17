@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     public void testDagger(View view) {
         /** get data from preference */
         boolean test = defaultPreferences.getBoolean(TEST, false);
-        Toast.makeText(this, "Got From preferences " + test, Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "Got From preferences " + test, Toast.LENGTH_LONG).show();
         /** make server call with volley */
         makeJsonRequest();
     }
